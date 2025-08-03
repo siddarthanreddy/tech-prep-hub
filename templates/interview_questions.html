@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Interview Questions - Tech Prep Hub{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded-lg shadow-md mb-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">Core Interview Questions</h2>
+    <p class="text-lg text-gray-600 mb-8">Prepare for your technical and HR interviews with a curated list of important questions across various core topics. Click on a question to reveal its answer.</p>
+
+    <div class="space-y-6">
+        {% for category_key, category_data in categories.items() %}
+        <div class="bg-gray-50 rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <button class="accordion-header w-full flex justify-between items-center p-5 text-left text-xl font-semibold text-gray-800 bg-blue-50 hover:bg-blue-100 transition duration-200 ease-in-out focus:outline-none">
+                {{ category_data.title }}
+                <svg class="w-6 h-6 transform transition-transform duration-200 accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="accordion-content hidden p-5 border-t border-gray-200 space-y-4">
+                {% for q_item in category_data.questions %}
+                <div class="bg-white p-4 rounded-lg border border-blue-200 shadow-sm">
+                    <button class="question-toggle w-full flex justify-between items-center text-left font-medium text-gray-800 focus:outline-none">
+                        Q: {{ q_item.q }}
+                        <svg class="w-5 h-5 ml-2 transform transition-transform duration-200 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="answer-content hidden mt-3 pt-3 border-t border-gray-100 text-gray-700">
+                        <p class="font-semibold">A:</p>
+                        <p>{{ q_item.a }}</p>
+
+                        {% if q_item.youtube_link %}
+                        <div class="mt-4 p-3 bg-red-50 rounded-lg border border-red-200 text-red-800 text-sm">
+                            <h5 class="font-medium mb-1">Watch Video Explanation:</h5>
+                            <a href="{{ q_item.youtube_link }}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                                {{ q_item.youtube_link }}
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

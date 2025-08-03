@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your @apply rules and custom CSS come after this */
+
+/* Reusable Navigation Link Style */
+.nav-link {
+    @apply text-white hover:text-yellow-200 transition duration-300 ease-in-out transform hover:scale-110 px-4 py-2 rounded-lg;
+    position: relative;
+    overflow: hidden;
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-out;
+    transform: skewX(-20deg);
+}
+.nav-link:hover::before {
+    transform: translateX(100%) skewX(-20deg);
+}
+
+/* Reusable Button Style (for consistency) */
+.btn {
+    @apply font-extrabold py-4 px-10 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl text-lg relative overflow-hidden;
+    background-size: 200% auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover {
+    background-position: right center; /* Change the background position on hover */
+}
+
+/* Specific button colors with gradients */
+.btn-primary {
+    @apply text-white;
+    background-image: linear-gradient(to right, theme('colors.primary-blue') 0%, theme('colors.primary-blue-dark') 50%, theme('colors.primary-blue') 100%);
+}
+
+.btn-secondary {
+    @apply text-white;
+    background-image: linear-gradient(to right, theme('colors.secondary-green') 0%, theme('colors.secondary-green-dark') 50%, theme('colors.secondary-green') 100%);
+}
+
+.btn-accent {
+    @apply text-white;
+    background-image: linear-gradient(to right, theme('colors.accent-purple') 0%, theme('colors.accent-purple-dark') 50%, theme('colors.accent-purple') 100%);
+}
+
+
+/* Card base style */
+.content-card {
+    @apply bg-white p-12 rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-500 ease-in-out border border-gray-100;
+}
+
+/* Header for content sections within cards */
+.content-section-header {
+    @apply text-5xl font-extrabold text-dark-text mb-8 border-b-2 border-gray-200 pb-5 leading-tight;
+}
+
+/* Code Block Styling */
+pre code {
+    @apply leading-relaxed; /* Ensure good line spacing in code */
+}
+
+/* Custom colors for difficulty badges (if not fully Tailwind-converted) */
+.difficulty {
+    padding: 0.3em 0.8em;
+    border-radius: 9999px; /* Full rounded for pill shape */
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.difficulty-easy { background-color: #28a745; } /* Brighter green */
+.difficulty-medium { background-color: #ffc107; } /* Brighter yellow */
+.difficulty-hard { background-color: #dc3545; } /* Brighter red */
+
+/* For external link icon */
+.external-link-icon {
+    @apply ml-1 text-gray-500 hover:text-blue-700 transition-colors duration-200;
+}
