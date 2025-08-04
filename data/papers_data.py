@@ -1,8 +1,92 @@
 papers_data = [
-    {"company": "TCS", "links": [{"name": "TCS NQT 2023 Slot 1", "url": "https://www.example.com/tcs-nqt-2023-s1", "type": "pdf"}, {"name": "TCS NQT 2023 Slot 2", "url": "https://www.example.com/tcs-nqt-2023-s2", "type": "pdf"}, {"name": "TCS Digital 2022 Interview Experience", "url": "https://www.example.com/tcs-digital-2022-ie", "type": "article"}]},
-    {"company": "Infosys", "links": [{"name": "Infosys HackWithInfy 2024 Coding Questions", "url": "https://www.example.com/infosys-hwi-2024-code", "type": "pdf"}, {"name": "Infosys Power Programmer 2023 Aptitude", "url": "https://www.example.com/infosys-pp-2023-apt", "type": "pdf"}]},
-    {"company": "Wipro", "links": [{"name": "Wipro NLTH 2023 Previous Year Paper", "url": "https://www.example.com/wipro-nlth-2023-paper", "type": "pdf"}, {"name": "Wipro Elite 2022 Interview Tips", "url": "https://www.example.com/wipro-elite-2022-tips", "type": "article"}]},
-    {"company": "Accenture", "links": [{"name": "Accenture 2024 Coding Round Questions", "url": "https://www.example.com/accenture-2024-code", "type": "pdf"}, {"name": "Accenture Assessment Prep Guide", "url": "https://www.example.com/accenture-prep-guide", "type": "article"}]},
-    {"company": "Capgemini", "links": [{"name": "Capgemini Placement Paper 2023", "url": "https://www.example.com/capgemini-2023-paper", "type": "pdf"}, {"name": "Capgemini Super Set Interview Experience", "url": "https://www.example.com/capgemini-supersett-ie", "type": "article"}]},
-    {"company": "Cognizant", "links": [{"name": "Cognizant GenC Next 2024 Pattern", "url": "https://www.example.com/cognizant-genc-next-2024", "type": "article"}, {"name": "Cognizant Technical Interview Questions", "url": "https://www.example.com/cognizant-tech-q", "type": "pdf"}]},
+  {
+    "company": "TCS",
+    "links": [
+      {
+        "name": "TCS NQT Previous Year Papers",
+        "url": "https://www.freshersnow.com/tcs-placement-papers-pdf/",
+        "type": "pdf"
+      },
+      {
+        "name": "TCS NQT Sample Model Papers with Solutions",
+        "url": "https://testbook.com/tcs-nqt/previous-year-papers",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "company": "Infosys",
+    "links": [
+      {
+        "name": "HackWithInfy Sample Questions PDF (Infosys official)",
+        "url": "https://www.infosys.com/careers/hackwithinfy/2025/sample-questions_hwi.pdf",
+        "type": "pdf"
+      },
+      {
+        "name": "HackWithInfy Interview Experience (GeeksforGeeks)",
+        "url": "https://www.geeksforgeeks.org/interview-experiences/infosys-dse-interview-experience-hackwithinfy/",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "company": "Wipro",
+    "links": [
+      {
+        "name": "Wipro Elite NLTH Placement Papers PDF (model)",
+        "url": "https://prepinsta.com/wipro-nlth/placement-papers/",
+        "type": "pdf"
+      },
+      {
+        "name": "Wipro Elite NTH Interviews & Tips (Jobschat)",
+        "url": "https://jobschat.in/wipro-elite-nlth-placement-papers/",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "company": "Accenture",
+    "links": [
+      {
+        "name": "Accenture Placement Question Papers PDF (FreshersNow)",
+        "url": "https://www.freshersnow.com/accenture-placement-papers/",
+        "type": "pdf"
+      },
+      {
+        "name": "Accenture Coding Questions & Solutions (iScalePro)",
+        "url": "https://www.iscalepro.com/post/accenture-coding-questions/",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "company": "Capgemini",
+    "links": [
+      {
+        "name": "Capgemini Placement Papers PDF (FreshersNow)",
+        "url": "https://www.freshersnow.com/capgemini-placement-papers/",
+        "type": "pdf"
+      },
+      {
+        "name": "Capgemini Placement Questions & Solutions (FacePrep)",
+        "url": "https://faceprep.in/article/capgemini-placement-papers-with-solutions-faceprep/",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "company": "Cognizant",
+    "links": [
+      {
+        "name": "Cognizant GenC Placement Papers PDF (FreshersNow)",
+        "url": "https://www.freshersnow.com/cognizant-placement-papers/",
+        "type": "pdf"
+      },
+      {
+        "name": "Cognizant GenC Next Papers & Pattern (PrepInsta)",
+        "url": "https://prepinsta.com/cognizant-genc-next/",
+        "type": "article"
+      }
+    ]
+  }
 ]

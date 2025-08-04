@@ -1,11 +1,11 @@
-{% extends "base.html" %} {# CRITICAL FIX: Ensure this extends "base.html" #}
+{% extends "base.html" %}
 
 {% block title %}{{ roadmap.title }} - Tech Prep Hub{% endblock %}
 
 {% block content %}
 <div class="bg-white p-8 rounded-lg shadow-md mb-8">
     <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">{{ roadmap.title }}</h2>
-    <p class="text-lg text-gray-600 mb-8">Dive deep into essential Python topics, from the basics to more advanced concepts, with clear explanations and practical examples.</p>
+    <p class="text-lg text-gray-600 mb-8">Explore the practices and tools that integrate software development and IT operations, enabling faster and more reliable software delivery.</p>
 
     {% if roadmap.youtube_playlist %}
     <div class="mb-10 p-5 bg-yellow-100 rounded-lg border border-yellow-300 text-yellow-900 text-center shadow-md">
@@ -18,10 +18,11 @@
     </div>
     {% endif %}
 
-    <div class="space-y-16"> {# Increased space between topics #}
-        {% for topic in roadmap.topics %}{# Changed from domain.topics to roadmap.topics #}
+    {% if roadmap.topics %}
+    <div class="space-y-16">
+        {% for topic in roadmap.topics %}
         <div class="bg-white p-10 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.01]">
-            <h3 class="text-3xl font-bold text-blue-700 mb-6 border-b border-blue-200 pb-4">{{ topic.name }}</h3>
+            <h3 class="text-3xl font-bold text-teal-700 mb-6 border-b border-teal-200 pb-4">{{ topic.name }}</h3> {# Color for DevOps #}
 
             <div class="mb-8">
                 <h4 class="text-2xl font-semibold text-dark-text mb-3">Explanation:</h4>
@@ -38,7 +39,7 @@
             {% if topic.example_output %}
             <div class="mb-8">
                 <h4 class="text-2xl font-semibold text-dark-text mb-3">Expected Output:</h4>
-                <pre class="bg-green-50 text-green-800 p-6 rounded-lg overflow-x-auto text-base border border-green-200 shadow-inner font-mono leading-relaxed"><code>{{ topic.example_output | e }}</code></pre>
+                <pre class="bg-green-100 text-green-800 p-6 rounded-lg overflow-x-auto text-base border border-green-200 shadow-inner font-mono leading-relaxed"><code>{{ topic.example_output | e }}</code></pre>
             </div>
             {% endif %}
 
@@ -52,10 +53,12 @@
                 </a>
             </div>
             {% endif %}
-
         </div>
         {% endfor %}
     </div>
+    {% else %}
+        <p class="text-center text-gray-500 text-lg mt-8">No topics found for this roadmap yet.</p>
+    {% endif %}
     <p class="text-center text-light-text text-sm mt-16">More topics and deeper dives will be added regularly!</p>
 </div>
 {% endblock %}

@@ -3,22 +3,136 @@
 {% block title %}Domains - Tech Prep Hub{% endblock %}
 
 {% block content %}
-<div class="bg-white p-8 rounded-lg shadow-md mb-8">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">Explore Learning Domains</h2>
-    <p class="text-lg text-gray-600 mb-8">Dive deep into specific technical areas to strengthen your foundational knowledge.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="{{ url_for('domain_detail', domain_name='python') }}" class="block bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out">
-            <h3 class="text-2xl font-semibold mb-2">Python Programming</h3>
-            <p class="text-blue-100">Master core Python concepts for interviews, from basics to advanced topics.</p>
+<div class="bg-white p-8 rounded-lg shadow-xl mb-8 border border-gray-100 animate-fade-in-up">
+    <h2 class="text-4xl font-extrabold text-center text-gradient-start mb-6 border-b-4 border-gradient-end pb-4 transform rotate-x-6">
+        Explore Our Learning Domains
+    </h2>
+    <p class="text-xl text-center text-light-text mb-10 max-w-3xl mx-auto">
+        Dive into a curated collection of tech domains. Each path is designed to equip you with the knowledge and skills needed to excel in your interviews and career.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {# Python Domain Card #}
+        <a href="{{ url_for('roadmap', name='python') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-blue-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+            <div class="domain-icon bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition duration-300">
+                <i class="fab fa-python text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-primary-blue mt-6 mb-2 text-center">Python</h3>
+            <p class="text-lg text-light-text text-center">Master Python for data science, web development, and more. Essential for various tech roles.</p>
         </a>
-        <a href="{{ url_for('domain_detail', domain_name='fullstack') }}" class="block bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out">
-            <h3 class="text-2xl font-semibold mb-2">Full Stack Development</h3>
-            <p class="text-green-100">Comprehensive guide to both frontend and backend technologies for web development.</p>
+
+        {# Full Stack Development Domain Card #}
+        <a href="{{ url_for('roadmap', name='fullstack') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-green-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+            <div class="domain-icon bg-green-50 text-green-600 group-hover:bg-green-100 transition duration-300">
+                <i class="fas fa-code text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-secondary-green mt-6 mb-2 text-center">Full Stack Development</h3>
+            <p class="text-lg text-light-text text-center">Learn frontend and backend technologies to build complete web applications.</p>
         </a>
-        <a href="{{ url_for('domain_detail', domain_name='aptitude') }}" class="block bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out">
-            <h3 class="text-2xl font-semibold mb-2">Aptitude & Reasoning</h3>
-            <p class="text-purple-100">Sharpen your analytical and problem-solving skills for various competitive exams.</p>
-        </a>
+
+        {# Aptitude & Reasoning Domain Card #}
+        <a href="{{ url_for('roadmap', name='aptitude') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-purple-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+            <div class="domain-icon bg-purple-50 text-purple-600 group-hover:bg-purple-100 transition duration-300">
+                <i class="fas fa-brain text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-accent-purple mt-6 mb-2 text-center">Aptitude & Reasoning</h3>
+                <p class="text-lg text-light-text text-center">Sharpen your analytical and problem-solving skills, crucial for competitive exams and interviews.</p>
+            </a>
+
+            {# Data Analyst Domain Card #}
+            <a href="{{ url_for('roadmap', name='dataanalyst') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-orange-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-orange-50 text-orange-600 group-hover:bg-orange-100 transition duration-300">
+                    <i class="fas fa-chart-line text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-orange-700 mt-6 mb-2 text-center">Data Analyst</h3>
+                <p class="text-lg text-light-text text-center">Master the tools and techniques to extract insights and tell stories from data.</p>
+            </a>
+
+            {# Cybersecurity Domain Card #}
+            <a href="{{ url_for('roadmap', name='cybersecurity') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-pink-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-pink-50 text-pink-600 group-hover:bg-pink-100 transition duration-300">
+                    <i class="fas fa-shield-alt text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-pink-700 mt-6 mb-2 text-center">Cybersecurity</h3>
+                <p class="text-lg text-light-text text-center">Learn to protect systems, networks, and data from digital attacks.</p>
+            </a>
+
+            {# Java Developer Domain Card #}
+            <a href="{{ url_for('roadmap', name='java') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-red-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-red-50 text-red-600 group-hover:bg-red-100 transition duration-300">
+                    <i class="fab fa-java text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-red-700 mt-6 mb-2 text-center">Java Developer</h3>
+                <p class="text-lg text-light-text text-center">Master Java programming and its ecosystem for enterprise and application development.</p>
+            </a>
+
+            {# DevOps Domain Card #}
+            <a href="{{ url_for('roadmap', name='devops') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-teal-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-teal-50 text-teal-600 group-hover:bg-teal-100 transition duration-300">
+                    <i class="fas fa-cloud-upload-alt text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-teal-700 mt-6 mb-2 text-center">DevOps</h3>
+                <p class="text-lg text-light-text text-center">Streamline software development and operations for faster, more reliable deployments.</p>
+            </a>
+
+            {# AWS Cloud Computing Domain Card #}
+            <a href="{{ url_for('roadmap', name='aws') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-gray-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-gray-50 text-gray-600 group-hover:bg-gray-100 transition duration-300">
+                    <i class="fab fa-aws text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-700 mt-6 mb-2 text-center">AWS Cloud Computing</h3>
+                <p class="text-lg text-light-text text-center">Learn to build, deploy, and manage applications on the Amazon Web Services platform.</p>
+            </a>
+
+            {# Machine Learning Domain Card #}
+            <a href="{{ url_for('roadmap', name='machinelearning') }}" class="domain-card group bg-white p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-indigo-400 hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-2">
+                <div class="domain-icon bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100 transition duration-300">
+                    <i class="fas fa-robot text-6xl mx-auto transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-indigo-700 mt-6 mb-2 text-center">Machine Learning</h3>
+                <p class="text-lg text-light-text text-center">Explore algorithms that enable systems to learn from data and make predictions.</p>
+            </a>
+
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-12">More exciting domains will be added soon!</p>
     </div>
-</div>
-{% endblock %}
+
+    {# Custom Styles for Domain Cards (add this to your static/css/style.css file) #}
+    <style>
+        .domain-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* Remove default underline from links */
+        }
+
+        .domain-icon {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            border-radius: 50%; /* Makes it circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem; /* Spacing between icon and title */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+    </style>
+    {% endblock %}
+    ```
+
+---
+
+### **Important Final Reminders:**
+
+1.  **Placement:**
+    * **Data Files (`.py`):** `data/cybersecurity_data.py`, `data/java_data.py`, etc., must be in `C:\tech-prep-hub\data\`.
+    * **Domain Templates (`.html`):** `domains/cybersecurity.html`, `domains/java.html`, etc., must be in `C:\tech-prep-hub\templates\domains\`.
+    * **`domains.html`:** Must be in `C:\tech-prep-hub\templates\`.
+
+2.  **`app.py` Update:** Ensure your `app.py` includes **all** the necessary imports for the new data files and has them added to the `roadmap_data` dictionary in the `roadmap()` function. (My last `app.py` in the previous conversation already includes this for all these domains).
+
+3.  **Save All Files:** Make sure every single `.py` and `.html` file you've touched is saved!
+
+4.  **Restart Flask Server:** Stop your server (`Ctrl+C`) and run it again (`python app.py` or `flask run`).
+
+This will fully integrate all your new domains into the website!

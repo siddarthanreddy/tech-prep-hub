@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {{ domain.title }} - Tech Prep Hub
+    {{ roadmap.title }} - Tech Prep Hub {# Changed 'domain.title' to 'roadmap.title' #}
 {% endblock %}
 
 {% block content %}
 <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">{{ domain.title }}</h2>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">{{ roadmap.title }}</h2> {# Changed 'domain.title' to 'roadmap.title' #}
     <p class="text-lg text-gray-600 mb-8">Sharpen your analytical and problem-solving skills with detailed explanations and examples across various aptitude and reasoning topics.</p>
 
-    {% if domain.youtube_playlist %}
+    {% if roadmap.youtube_playlist %} {# Changed 'domain.youtube_playlist' to 'roadmap.youtube_playlist' #}
     <div class="mb-10 p-5 bg-yellow-100 rounded-lg border border-yellow-300 text-yellow-900 text-center shadow-md">
         <p class="font-bold text-xl mb-3">Recommended Full Playlist for this Domain:</p>
-        <a href="{{ domain.youtube_playlist }}" target="_blank" class="text-primary-blue-dark hover:text-primary-blue hover:underline text-lg flex items-center justify-center font-medium">
+        <a href="{{ roadmap.youtube_playlist }}" target="_blank" class="text-primary-blue-dark hover:text-primary-blue hover:underline text-lg flex items-center justify-center font-medium"> {# Changed 'domain.youtube_playlist' to 'roadmap.youtube_playlist' #}
             <svg class="w-6 h-6 inline-block mr-2 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
             Watch Full Course on YouTube
         </a>
@@ -21,7 +21,7 @@
     {% endif %}
 
     <div class="space-y-16">
-        {% for topic in domain.topics %}
+        {% for topic in roadmap.topics %} {# Changed 'domain.topics' to 'roadmap.topics' #}
         <div class="bg-white p-10 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.01]">
             <h3 class="text-3xl font-bold text-accent-purple mb-6 border-b border-purple-200 pb-4">{{ topic.name }}</h3>
 
@@ -40,7 +40,7 @@
             {% if topic.example_output %}
             <div class="mb-8">
                 <h4 class="text-2xl font-semibold text-dark-text mb-3">Solution/Output:</h4>
-                <pre class="bg-green-50 text-green-800 p-6 rounded-lg overflow-x-auto text-base border border-green-200 shadow-inner font-mono leading-relaxed"><code>{{ topic.example_output | e }}</code></pre>
+                <pre class="bg-green-100 text-green-800 p-6 rounded-lg overflow-x-auto text-base border border-green-200 shadow-inner font-mono leading-relaxed"><code>{{ topic.example_output | e }}</code></pre>
             </div>
             {% endif %}
 

@@ -3,7 +3,8 @@
 {% block title %}Welcome - Tech Prep Hub{% endblock %}
 
 {% block content %}
-<div class="min-h-[70vh] flex flex-col justify-center items-center text-center px-4">
+<div class="min-h-[70vh] flex flex-col justify-center items-center text-center px-4 py-16">
+    {# Main Hero Section - Retains original charm, subtle enhancements #}
     <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 mb-8 leading-tight animate-fade-in-up transform hover:scale-105 transition-transform duration-500 ease-in-out">
         Ignite Your Tech Journey
     </h1>
@@ -11,19 +12,86 @@
         Master essential concepts, conquer coding challenges, and nail every interview.
         <span class="block mt-4 text-primary-blue-dark font-bold text-3xl md:text-4xl">Your path to success starts here.</span>
     </p>
-    <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8 animate-fade-in-up delay-400">
-        <a href="{{ url_for('domains') }}" class="btn btn-primary text-xl font-extrabold shadow-lg hover:shadow-xl group">
-            <svg class="w-7 h-7 inline-block mr-3 transform -translate-y-0.5 group-hover:rotate-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-            Start Learning
+    
+    {# Core CTA Buttons - Conditionally displayed if not logged in, otherwise just part of the page #}
+    {% if not user_logged_in %}
+    <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8 animate-fade-in-up delay-400 mb-20">
+        <a href="{{ url_for('login') }}" class="btn btn-primary text-xl font-extrabold shadow-lg hover:shadow-xl group">
+            <svg class="w-7 h-7 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+            Login
         </a>
-        <a href="{{ url_for('problems') }}" class="btn btn-secondary text-xl font-extrabold shadow-lg hover:shadow-xl group">
-            <svg class="w-7 h-7 inline-block mr-3 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-            Practice Coding
-        </a>
-        <a href="{{ url_for('interview_questions') }}" class="btn btn-accent text-xl font-extrabold shadow-lg hover:shadow-xl group">
-            <svg class="w-7 h-7 inline-block mr-3 transform group-hover:-translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9.228a4.5 4.5 0 115.475 5.475M12 20.25h.008v.008H12v-.008z"></path></svg>
-            Ace Interviews
+        <a href="{{ url_for('signup') }}" class="btn btn-secondary text-xl font-extrabold shadow-lg hover:shadow-xl group">
+            <svg class="w-7 h-7 inline-block mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM12 14c-1.474 0-2.883.27-4 0.764V18a2 2 0 002 2h4a2 2 0 002-2v-3.236c-1.117-.494-2.526-.764-4-.764z"></path></svg>
+            Register
         </a>
     </div>
+    {% endif %}
+
+    {# Features Section #}
+    <section class="w-full py-16 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl shadow-2xl mb-20 animate-fade-in-up delay-600">
+        <h2 class="text-4xl font-extrabold text-dark-text mb-12 text-center">What We Offer</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-8">
+            <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-b-4 border-blue-500 transform hover:scale-105 transition duration-300 ease-in-out">
+                <div class="text-5xl text-blue-600 mb-4 text-center"><i class="fas fa-book-open"></i></div>
+                <h3 class="text-2xl font-bold text-dark-text mb-3 text-center">Comprehensive Domains</h3>
+                <p class="text-lg text-light-text text-center">In-depth roadmaps from scratch to advanced in Python, Java, DevOps, Cybersecurity, and more.</p>
+                <a href="{{ url_for('domains') }}" class="text-primary-blue hover:underline font-semibold mt-4 block text-center">Explore Domains <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-b-4 border-green-500 transform hover:scale-105 transition duration-300 ease-in-out">
+                <div class="text-5xl text-green-600 mb-4 text-center"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="text-2xl font-bold text-dark-text mb-3 text-center">Practice Problems</h3>
+                <p class="text-lg text-light-text text-center">Hundreds of coding, aptitude, and logical reasoning problems with detailed solutions.</p>
+                <a href="{{ url_for('problems') }}" class="text-secondary-green hover:underline font-semibold mt-4 block text-center">Start Practicing <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-b-4 border-purple-500 transform hover:scale-105 transition duration-300 ease-in-out">
+                <div class="text-5xl text-purple-600 mb-4 text-center"><i class="fas fa-microphone-alt"></i></div>
+                <h3 class="text-2xl font-bold text-dark-text mb-3 text-center">Interview Prep</h3>
+                <p class="text-lg text-light-text text-center">Curated interview questions and answers to ace your technical and HR rounds.</p>
+                <a href="{{ url_for('interview') }}" class="text-accent-purple hover:underline font-semibold mt-4 block text-center">Prepare for Interviews <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    {# Why Choose Us Section #}
+    <section class="w-full py-16 bg-white rounded-xl shadow-2xl mb-20 animate-fade-in-up delay-800">
+        <h2 class="text-4xl font-extrabold text-dark-text mb-12 text-center">Why Choose Tech Prep Hub?</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-8 items-center">
+            <div class="text-left space-y-6">
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl text-gradient-start"><i class="fas fa-check-circle"></i></div>
+                    <p class="text-xl font-semibold text-dark-text">Structured Roadmaps: Clear, step-by-step learning paths.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl text-gradient-middle"><i class="fas fa-code-branch"></i></div>
+                    <p class="text-xl font-semibold text-dark-text">Practical Examples: Hands-on code and real-world scenarios.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl text-gradient-end"><i class="fas fa-question-circle"></i></div>
+                    <p class="text-xl font-semibold text-dark-text">Expertly Curated Questions: From top service-based companies.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl text-primary-blue-dark"><i class="fas fa-video"></i></div>
+                    <p class="text-xl font-semibold text-dark-text">Video Explanations: Links to top-quality tutorials for deeper understanding.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="https://via.placeholder.com/400x300/F0F4F8/64748B?text=Learn+Smart" alt="Learning Illustration" class="mx-auto rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+    
+    {# Final Call to Action (if not logged in) #}
+    {% if not user_logged_in %}
+    <section class="w-full py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-2xl animate-fade-in-up delay-1000">
+        <div class="container mx-auto text-center px-8">
+            <h2 class="text-4xl font-extrabold mb-6">Ready to Ace Your Interviews?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Join Tech Prep Hub today and unlock your full potential. Start your journey towards a successful tech career!</p>
+            <a href="{{ url_for('signup') }}" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-full text-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Get Started Free <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+    {% endif %}
+
 </div>
 {% endblock %}
